@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from django.contrib.messages import constants as messages
+import  os
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',  # Custom class for debug messages
@@ -21,7 +22,7 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',  # Bootstrap danger color
 }
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/chat/%(username)s/'
 LOGIN = 'login'
 LOGOUT = 'logout'
 LOGIN_URL = 'login'
@@ -55,14 +56,26 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'chat',
     'users',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
-
+SITE_ID = 2
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+LOGIN_REDIRECT_URL = '/home/'
+LOGOUT_REDIRECT_URL = '/'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -72,7 +85,9 @@ ROOT_URLCONF = 'chat_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        # 'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
