@@ -27,14 +27,17 @@ A basic real-time chat application built using Django. It supports user registra
 
 ## 🖼️ Screenshots
 
+
+### 🔹 Login Page
+![Login](screenshots/Login.png)
+
 ### 🔹 Account Creation
 ![Account Create](screenshots/Account%20create.png)
 
 ### 🔹 Admin Login
 ![Admin Login](screenshots/Admin%20Login.png)
 
-### 🔹 Login Page
-![Login](screenshots/Login.png)
+
 
 ### 🔹 Chat Interface
 ![Chat](screenshots/Chat.png)
