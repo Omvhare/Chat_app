@@ -6,20 +6,20 @@ A basic real-time chat application built using Django. It supports user registra
 
 ## 🚀 Features
 
-- 👤 User Account Creation
-- 🔐 User and Admin Login
+- 👤 User Account Creation 
+- 🔐 User and Admin Login 
 - 💬 Real-time Chat Interface
-- 📂 Chat Rooms (e.g., chat1)
-- 📨 Message Viewing and Sending
-- 👥 User List View (Admin/General)
-- 🔒 Authentication & Session Handling
+- 📂 Chat Rooms (e.g., chat1) 
+- 📨 Message Viewing and Sending 
+- 👥 User List View (Admin/General) 
+- 🔒 Authentication & Session Handling  
 
 ---
 
 ## 🛠 Tech Stack
 
 - **Backend:** Django (Python)
-- **Database:** PostgreSQL or SQLite
+- **Database:** PostgreSQL or SQLite 
 - **Frontend:** HTML, CSS, Bootstrap
 - **Deployment Ready:** Git & GitHub, Render, Azure, or AWS
 
